@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:48:24 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/11 16:27:55 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:40:48 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,27 @@ void	stack_push_bottom(t_stack *stack, t_node *node)
 		stack->bottom = node;
 	}
 	stack->size++;
+}
+
+t_node	*stack_pop_top(t_stack *stack)
+{
+	t_node	*topnode;
+
+	if (!stack || stack->size == 0)
+		return (NULL);
+	topnode = stack->top;
+	if (stack->size == 1)
+	{
+		stack->top = NULL;
+		stack->bottom = NULL;
+	}
+	else
+	{
+		stack->top = topnode->next;
+		stack->top->prev = NULL;
+	}
+	topnode->next = NULL;
+	topnode->prev = NULL;
+	stack->size--;
+	return (topnode);
 }
