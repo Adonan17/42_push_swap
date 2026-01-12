@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:48:24 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/11 16:40:48 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:57:21 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	stack_push_top(t_stack *stack, t_node *node)
 {
 	if (!stack || !node)
 		return ;
+	node->prev = NULL;
 	if (stack->size == 0)
 	{
 		stack->top = node;
@@ -60,6 +61,7 @@ void	stack_push_bottom(t_stack *stack, t_node *node)
 {
 	if (!stack || !node)
 		return ;
+	node->next = NULL;
 	if (stack->size == 0)
 	{
 		stack->top = node;
@@ -95,4 +97,27 @@ t_node	*stack_pop_top(t_stack *stack)
 	topnode->prev = NULL;
 	stack->size--;
 	return (topnode);
+}
+
+t_node	*stack_pop_bottom(t_stack *stack)
+{
+	t_node	*bottomnode;
+
+	if (!stack || stack->size == 0)
+		return (NULL);
+	bottomnode = stack->bottom;
+	if (stack->size == 1)
+	{
+		stack->top = NULL;
+		stack->bottom = NULL;
+	}
+	else
+	{
+		stack->bottom = bottomnode->prev;
+		stack->bottom->next = NULL;
+	}
+	bottomnode->next = NULL;
+	bottomnode->prev = NULL;
+	stack->size--;
+	return (bottomnode);
 }
