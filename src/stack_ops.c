@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:20:50 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/12 14:54:50 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:01:01 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,21 @@ void	stack_rotate(t_stack *stack)
 	secondnode->prev = NULL;
 	stack->bottom = firstnode;
 	stack->top = secondnode;
+}
+
+void	stack_rev_rotate(t_stack *stack)
+{
+	t_node	*lastnode;
+	t_node	*secondlastnode;
+
+	if (!stack || stack->size < 2)
+		return ;
+	lastnode = stack->bottom;
+	secondlastnode = lastnode->prev;
+	stack->top->prev = lastnode;
+	lastnode->next = stack->top;
+	lastnode->prev = NULL;
+	secondlastnode->next = NULL;
+	stack->top = lastnode;
+	stack->bottom = secondlastnode;
 }
