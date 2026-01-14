@@ -6,7 +6,16 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:56:03 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/14 11:56:04 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:22:35 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	sa(t_stack *a)
+{
+	if (!a || a->size < 2)
+		return ;
+	stack_swap_top(a);
+	write(1, "sa\n", 3);
+}
