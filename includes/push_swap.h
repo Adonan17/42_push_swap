@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/14 11:48:50 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:46:18 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,35 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-// stack_new
+/* STACK CREATION */
 t_stack	*stack_new(void);
 t_node	*node_new(int value);
 
-// stack_push_pop
+/* STACK PUSH / POP */
 void	stack_push_top(t_stack *stack, t_node *node);
 void	stack_push_bottom(t_stack *stack, t_node *node);
 t_node	*stack_pop_top(t_stack *stack);
 t_node	*stack_pop_bottom(t_stack *stack);
 
-// stack_ops.c
+/* STACK OPS (NO PRINT) */
 void	stack_swap_top(t_stack *stack);
 void	stack_rotate(t_stack *stack);
 void	stack_rev_rotate(t_stack *stack);
+
+/* PUSH_SWAP COMMANDS (PRINT) */
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif
