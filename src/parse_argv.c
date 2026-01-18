@@ -6,30 +6,11 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:10:58 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/18 17:07:47 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:12:19 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	clear_stack(t_stack *a)
-{
-	t_node	*cur;
-	t_node	*next;
-
-	if (!a)
-		return ;
-	cur = a->top;
-	while (cur)
-	{
-		next = cur->next;
-		free(cur);
-		cur = next;
-	}
-	a->top = NULL;
-	a->bottom = NULL;
-	a->size = 0;
-}
 
 static void	parse_error(t_stack *a, char **tokens)
 {
