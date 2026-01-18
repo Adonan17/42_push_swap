@@ -6,26 +6,11 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:10:58 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/18 15:51:45 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/18 17:07:47 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	free_split(char **tokens)
-{
-	int	i;
-
-	if (!tokens)
-		return ;
-	i = 0;
-	while (tokens[i])
-	{
-		free(tokens[i]);
-		i++;
-	}
-	free(tokens);
-}
 
 static void	clear_stack(t_stack *a)
 {
