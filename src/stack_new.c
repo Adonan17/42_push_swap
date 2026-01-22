@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:48:24 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/12 12:03:59 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:44:10 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_node	*node_new(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = -1;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
