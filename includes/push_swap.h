@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 13:55:57 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:11:55 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
