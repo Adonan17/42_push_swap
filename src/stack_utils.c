@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 20:04:40 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 18:02:20 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:12:11 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,20 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
+int get_min(t_stack *a)
+{
+	int		min;
+	t_node	*cur;
 
+	if (!a || a->top == NULL)
+		return ;
+	min = a->top->value;
+	cur = a->top;
+	while (cur->next)
+	{
+		if (min > cur->value)
+			min = cur->value;
+		cur = cur->next;
+	}
+	return (min);
+}
