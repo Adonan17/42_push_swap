@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 15:35:54 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:24:00 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ void	parse_argv(int argc, char **argv, t_stack *a);
 void	clear_stack(t_stack *a);
 void	free_split(char **tokens);
 
-int		is_sorted(t_stack *a);
-
 void	sort(t_stack *a, t_stack *b);
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
+
+int		is_sorted(t_stack *a);
+int		get_max(t_stack *a);
+int		get_min(t_stack *a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:05:09 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 18:01:45 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:11:57 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,34 @@ void	sort_three(t_stack *a)
 
 void	sort_five(t_stack *a, t_stack *b)
 {
+	int		min;
+	int		idx;
+	t_node	*cur;
+
 	if (!a || !b)
 		return ;
-	pb(a, b);
+	while (a->size > 3)
+	{
+		min = get_min(a);
+		idx = 0;
+		cur = a->top;
+		while (cur && cur->value != min)
+		{
+			idx++;
+			cur = cur->next;
+		}
+		while (a->top && a->top->value != min)
+		{
+			if (idx <= (int)(a->size / 2))
+				ra(a);
+			else
+				rra(a);
+		}
+		pb(a, b);
+	}
 	sort_three(a);
+	while (b->size > 0)
+		pa(a, b);
 }
 
 void	sort(t_stack *a, t_stack *b)
@@ -65,4 +89,6 @@ void	sort(t_stack *a, t_stack *b)
 		sort_two(a);
 	else if (a->size == 3)
 		sort_three(a);
+	else if (a->size <= 5)
+		sort_five(a, b);
 }
