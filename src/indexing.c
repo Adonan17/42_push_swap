@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:16:09 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 21:34:07 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 21:58:23 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ static void	insertion_sort(int *arr, int n)
 	}
 }
 
+static int	find_index(int *arr, int n, int value)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (arr[i] == value)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
 void	assign_index(t_stack *a)
 {
 	t_node	*cur;
@@ -53,5 +67,11 @@ void	assign_index(t_stack *a)
 		i++;
 	}
 	insertion_sort(array, a->size);
+	cur = a->top;
+	while (cur)
+	{
+		cur->index = find_index(array, a->size, cur->value);
+		cur = cur->next;
+	}
 	free(array);
 }

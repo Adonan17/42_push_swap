@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 19:43:02 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 21:58:56 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void	sort_three(t_stack *a);
 int		is_sorted(t_stack *a);
 int		get_max(t_stack *a);
 int		get_min(t_stack *a);
+
+void	assign_index(t_stack *a);
 
 #endif
