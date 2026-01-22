@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:05:09 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 15:59:35 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:01:45 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ void	sort_three(t_stack *a)
 	}
 	else if (x < y && y > z && x > z)
 		rra(a);
+}
+
+void	sort_five(t_stack *a, t_stack *b)
+{
+	if (!a || !b)
+		return ;
+	pb(a, b);
+	sort_three(a);
 }
 
 void	sort(t_stack *a, t_stack *b)
