@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:56:03 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/14 13:31:00 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:56:59 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sb(t_stack *b)
 
 void	ss(t_stack *a, t_stack *b)
 {
-	if (!a || !b || b->size < 2 && a->size < 2)
+	if (!a || !b || (b->size < 2 && a->size < 2))
 		return ;
 	stack_swap_top(a);
 	stack_swap_top(b);
