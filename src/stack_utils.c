@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 20:04:40 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 18:12:11 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:13:22 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,22 @@ int get_min(t_stack *a)
 		cur = cur->next;
 	}
 	return (min);
+}
+
+int get_max(t_stack *a)
+{
+	int		max;
+	t_node	*cur;
+
+	if (!a || a->top == NULL)
+		return ;
+	max = a->top->value;
+	cur = a->top;
+	while (cur->next)
+	{
+		if (max < cur->value)
+			max = cur->value;
+		cur = cur->next;
+	}
+	return (max);
 }
