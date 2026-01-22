@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/19 20:12:43 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:41:14 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	parse_argv(int argc, char **argv, t_stack *a);
 void	clear_stack(t_stack *a);
 void	free_split(char **tokens);
 
-int	is_sorted(t_stack *a);
+int		is_sorted(t_stack *a);
 
 #endif
