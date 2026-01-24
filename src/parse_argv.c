@@ -58,7 +58,7 @@ static void	parse_tokens(t_stack *a, char **tokens)
 	}
 }
 
-void	parse_argv(int argc, char **argv, t_stack *a)
+void	parse_argv(int argc, char **argv, t_stack *a, t_stack *b)
 {
 	char	**tokens;
 	int		i;
@@ -70,7 +70,7 @@ void	parse_argv(int argc, char **argv, t_stack *a)
 	{
 		tokens = ft_split(argv[i], ' ');
 		if (!tokens || !tokens[0])
-			parse_error(a, tokens);
+			parse_error(a, b, tokens);
 		parse_tokens(a, tokens);
 		free_split(tokens);
 	}
