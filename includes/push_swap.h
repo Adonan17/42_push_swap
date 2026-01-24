@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 13:30:55 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 21:58:56 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:03:45 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ int		get_max(t_stack *a);
 int		get_min(t_stack *a);
 
 void	assign_index(t_stack *a);
+
+void	radix_sort(t_stack *a, t_stack *b);
 
 #endif
