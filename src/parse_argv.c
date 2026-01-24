@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-static void	parse_error(t_stack *a, char **tokens)
+static void	parse_error(t_stack *a, t_stack *b, char **tokens)
 {
-    free_split(tokens);
-    clear_stack(a);
-    clear_stack(b);
-    free(a);
-    free(b);
-    write(2, "Error\n", 6);
-    exit(1);
+	free_split(tokens);
+	clear_stack(a);
+	clear_stack(b);
+	free(a);
+	free(b);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 static int	is_duplicate(t_stack *a, int value)
@@ -37,7 +37,7 @@ static int	is_duplicate(t_stack *a, int value)
 	return (0);
 }
 
-static void	parse_tokens(t_stack *a, char **tokens)
+static void	parse_tokens(t_stack *a, t_stack *b, char **tokens)
 {
 	int		j;
 	int		err;
@@ -49,10 +49,10 @@ static void	parse_tokens(t_stack *a, char **tokens)
 	{
 		value = parse_int(tokens[j], &err);
 		if (err || is_duplicate(a, value))
-			parse_error(a, tokens);
+			parse_error(a, b, tokens);
 		node = node_new(value);
 		if (!node)
-			parse_error(a, tokens);
+			parse_error(a, b, tokens);
 		stack_push_bottom(a, node);
 		j++;
 	}
@@ -71,7 +71,7 @@ void	parse_argv(int argc, char **argv, t_stack *a, t_stack *b)
 		tokens = ft_split(argv[i], ' ');
 		if (!tokens || !tokens[0])
 			parse_error(a, b, tokens);
-		parse_tokens(a, tokens);
+		parse_tokens(a, b, tokens);
 		free_split(tokens);
 	}
 }
