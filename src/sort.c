@@ -6,7 +6,7 @@
 /*   By: aouassar <aouassar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:05:09 by aouassar          #+#    #+#             */
-/*   Updated: 2026/01/22 21:18:16 by aouassar         ###   ########.fr       */
+/*   Updated: 2026/01/24 16:54:55 by aouassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void	sort(t_stack *a, t_stack *b)
 	else if (a->size <= 5)
 		sort_five(a, b);
 	else
-{
-	assign_index(a);
-	radix_sort(a, b);
-}
+	{
+		assign_index(a);
+		radix_sort(a, b);
+	}
 }
