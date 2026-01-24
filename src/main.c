@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	parse_argv(argc, argv, a);
+	parse_argv(argc, argv, a, b);
 	if (is_sorted(a))
 	{
 		clear_stack(a);
