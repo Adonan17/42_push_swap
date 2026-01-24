@@ -65,7 +65,7 @@ void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
 int		parse_int(char *str, int *error);
-void	parse_argv(int argc, char **argv, t_stack *a);
+void	parse_argv(int argc, char **argv, t_stack *a, t_stack *b);
 
 void	clear_stack(t_stack *a);
 void	free_split(char **tokens);
