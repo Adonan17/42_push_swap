@@ -23,7 +23,7 @@ void	pb(t_stack *a, t_stack *b)
 	write(1, "pb\n", 3);
 }
 
-void	pa(t_stack *b, t_stack *a)
+void	pa(t_stack *a, t_stack *b)
 {
 	t_node	*node;
 
