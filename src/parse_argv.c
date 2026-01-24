@@ -14,10 +14,13 @@
 
 static void	parse_error(t_stack *a, char **tokens)
 {
-	free_split(tokens);
-	clear_stack(a);
-	write(2, "Error\n", 6);
-	exit(1);
+    free_split(tokens);
+    clear_stack(a);
+    clear_stack(b);
+    free(a);
+    free(b);
+    write(2, "Error\n", 6);
+    exit(1);
 }
 
 static int	is_duplicate(t_stack *a, int value)
